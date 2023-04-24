@@ -1,0 +1,18 @@
+    	
+        <a href="{{path("app_home") }}"><img id="Home" class="icon" src="{{ asset("assets/img/logo_Sissi_Mini.png") }}" alt="Sissi logo" ></a>
+		
+        <h1 class="tooltipe">
+		<a class="central" href="{{path("app_presentation") }}" >Biscuiterie Chocolaterie Sissi</a>
+		<span class="tooltiptexte">Qui sommes nous ?</span>
+		</h1>
+
+		
+     
+        <a id="perso" href="{{ path('app_login') }}">
+		{% if app.user %}
+			<p><a id="logout" href="{{ path("app_logout") }}"><img id="logout" class="icon" src="{{ asset("assets/img/logout.png") }}" alt="Logout"></a> </p>
+		{% else %}
+			<img id="perso" class="icon" src="{{ asset("assets/img/perso.png") }}" alt="Perso" >
+		{% endif %}
+		</a>
+        <a id="panier" href="#"><img id="panier" class="icon" src="{{ asset("assets/img/panier2.png") }}" alt="Panier"></a>

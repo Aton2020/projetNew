@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chocolats{% endblock %}
+
+{% block main %}
+<div class="main"> 
+    <div class="button_main">
+    <button class="bouton_type"><a id="bouton1" href="/category/{{ idChocolatNoir }}">Noir</a></button>
+    <button class="bouton_type"><a id="bouton2" href="/category/{{ idChocolatAuLait }}">Au lait</a></button>
+    <button class="bouton_type"><a id="bouton3" href="/category/{{ idChocolatBlanc }}">Blanc</a></button>
+    </div>
+
+    <div class="chocolats">
+    <a href="/category/{{ idChocolatNoir }}"><img id="chocolat_noir" class="accueil" src="{{ asset("img_Chocolats/chocolat_noir.jpg") }}" alt="Chocolat noir"></a>
+    <a href="/category/{{ idChocolatAuLait }}"><img id="chocolat_au_lait" class="accueil" src="{{ asset("img_Chocolats/chocolat_au_lait_2.jpg") }}" alt="Chocolat au lait"></a>
+    <a href="/category/{{ idChocolatBlanc }}"><img id="chocolat_blanc" class="accueil" src="{{ asset("img_Chocolats/chocolat_blanc_2.jpg") }}" alt="Chocolat blanc"></a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    background-color: rgb(245, 243, 239);
+   }
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    font-size: xx-large;
+    padding: 1rem;
+    top:0;
+    font-family: 'Great Vibes', cursive;
+    color:black;
+    font-size: 2rem;
+    }
+
+  h1 {
+    margin-top: 2rem;
+    font-size: 5rem;
+  }
+
+  .central {
+    color: black!important;
+    font-size: 5rem;
+    }
+
+  #perso, #panier, #logout {
+    font-family: 'Great Vibes', cursive;
+    color:black;
+    font-size: 2rem;
+    width: 3rem;
+    text-decoration: none;
+       }
+
+     
+  .tooltipe .tooltiptexte {
+    visibility: hidden;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.276);
+    color: #1e1e1e;
+    text-align:center;
+    font-size: 2rem;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+        /* bottom: 100%; */
+    top:0;
+    right:40%;
+        /* margin-left: -60px; */
+        
+        /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+      }
+      
+  .tooltipe:hover .tooltiptexte {
+    visibility: visible;
+    opacity: 1;
+    font-size: 3rem;
+      
+      }
+
+  .tooltipe2 .tooltiptexte2 {
+    visibility: hidden;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.276);
+    color: #1e1e1e;
+    text-align:center;
+    font-size: 2rem;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top:0;
+    left: 0;
+               
+        /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+      }
+       
+  .tooltipe:hover .tooltiptexte {
+    visibility: visible;
+    opacity: 0.6;
+    font-size: 3rem;
+      
+    }
+
+
+    
+      
+      /* .button_main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bouton_type {
+    display: block;
+} */

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Biscuits{% endblock %}
+
+{% block main %}
+<div class="main"> 
+    <div class="button_main">
+    <button class="bouton_type"><a id="bouton1" href="/category/{{ idBiscuitSale }}">Biscuits salés</a></button>
+    <button class="bouton_type"><a id="bouton2" href="/category/{{ idBiscuitSucre }}">Biscuits sucrés</a></button>
+    </div>
+
+    <div class="photo_main">
+    <a href="/category/{{ idBiscuitSale }}"><img id="biscuits_sales" class="accueil" src="{{ asset("img_Biscuits/biscuits_sales_grand.jpg") }}" alt="Biscuits_salés" ></a>
+    <a href="/category/{{ idBiscuitSucre }}"><img id="biscuits_sucres" class="accueil" src="{{ asset("img_Biscuits/biscuits_sucres_grand.jpg") }}" alt="Biscuits_sucrés"></a>
+    </div>
+</div>
+{% endblock %}

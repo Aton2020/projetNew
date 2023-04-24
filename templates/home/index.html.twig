@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{# si j'utilise un layout, je mets : 
+{% extends 'layouts/layout-three-columns.html.twig' %}
+#}
+
+{% block title %} Page Accueil 
+{% endblock %}
+
+
+{% block main %} 
+{#
+<div {{ stimulus_controller('say-hello') }}>
+    <input type="text" {{ stimulus_target('say-hello', 'name') }}/>  
+    <button {{ stimulus_action('say-hello', 'greet') }}> Dire Hello !</button> {#je viens de régler sur une bouton quelle méthode il devrait exécuter#}
+
+    {#<div {{ stimulus_target('say-hello', 'output') }}></div>
+
+</div> #}
+
+<div class="main"> 
+    <div class="button_main">
+        {% for categorie in categories %}
+            <button class="bouton_type"><a id="bouton1" href="{{ path('category_show', {'id': categorie.id}) }}">{{ categorie.name }}</a></button>
+        {% endfor %}
+    {# <button class="bouton_type"><a id="bouton1" href="/biscuits">Biscuits</a></button>
+    <button class="bouton_type"><a id="bouton2" href="/chocolats">Chocolats</a></button>
+    <button class="bouton_type"><a id="bouton3" href="/friandises">Friandises</a></button>#}
+    </div>
+
+    <div class="photo_main">
+    <a href="/chocolats"><img id="chocolat" class="accueil" src="{{ asset("img_Chocolats/chocolats_grand.jpg") }}" alt="Chocolats"></a>
+    <a href="/biscuits"><img id="biscuit" class="accueil" src="{{ asset("img_Biscuits/biscuits_grand.png") }}" alt="Biscuits" ></a>
+    <a href="/friandises"><img id="friandise" class="accueil" src="{{ asset("img_Friandises/friandises_grand.png") }}" alt="Friandises" ></a>
+    </div>
+</div>
+{% endblock %}

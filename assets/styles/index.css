@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.bouton_type {
+
+width: 400px; 
+height: 80px;
+background-color: white;
+border-radius: 50px;
+
+}
+
+#bouton1, #bouton2, #bouton3, #contact {
+color: black;
+font-size: 3rem;
+
+}
+
+#biscuit, #chocolat, #friandise {
+    width: 33.1%;
+    height: 500px;
+}
+
+.main {
+    display: flex; 
+    flex-direction: column;
+}
+
+.button_main {
+    display: flex; 
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+#biscuit {
+
+    width: 33%;
+}
+
+.presentation {
+    display: flex; 
+    justify-content: center;
+}
+
+.boutique {
+    text-align: center;
+
+}
+
+.boutique_photo {
+    width: 50%;
+    height: 500px;
+}

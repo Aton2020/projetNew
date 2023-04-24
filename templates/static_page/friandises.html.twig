@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Friandises{% endblock %}
+
+{% block main %}
+<div class="main"> 
+    <div class="button_main">
+    <button class="bouton_type"><a id="bouton1" href="/category/{{ idFriandises }}">Friandises</a></button>
+    </div>
+
+    <div class="friandises">
+    <a href="/category/{{ idFriandises }}"><img id="friandises_categorie" class="accueil" src="{{ asset("img_Friandises/friandises_categorie.png") }}" alt="Friandises"></a>
+    </div>
+</div>
+
+
+{% endblock %}
