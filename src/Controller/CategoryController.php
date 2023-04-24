@@ -42,22 +42,21 @@ class CategoryController extends AbstractController
         ]);
     }
 
+    
     public function biscuits(): Response
     {
         $categories = $this->db->getRepository(Categorie::class)->findAll();
-        // dump($categories);
-        // exit();
+        
 
+        $idBiscuitSucre = null;
+        $idBiscuitSale = null;
 
         foreach($categories as $cat) {
             if($cat->getName() === 'Biscuits sucrés') {
                 $idBiscuitSucre = $cat->getId();
             }
         }
-        // dump($idBiscuitSucre);
-        // exit();
-
-
+        
         foreach($categories as $cat) {
             if($cat->getName() === 'Biscuits salés') {
                 $idBiscuitSale = $cat->getId();

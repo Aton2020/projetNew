@@ -11,13 +11,19 @@ body {
 
     display: flex; 
     flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
     font-family: 'Great Vibes', cursive;
     font-size: 3rem;
 }
 
+#contact_bouton {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
 #contact {
-    margin-bottom: 1rem;
+    color: black;
 }
 
 .horaires {
