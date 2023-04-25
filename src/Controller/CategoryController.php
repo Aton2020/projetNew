@@ -52,13 +52,13 @@ class CategoryController extends AbstractController
         $idBiscuitSale = null;
 
         foreach($categories as $cat) {
-            if($cat->getName() === 'Biscuits sucrés') {
+            if($cat->getName() === 'Biscuit sucré') {
                 $idBiscuitSucre = $cat->getId();
             }
         }
         
         foreach($categories as $cat) {
-            if($cat->getName() === 'Biscuits salés') {
+            if($cat->getName() === 'Biscuit salé') {
                 $idBiscuitSale = $cat->getId();
             }
         }
@@ -68,7 +68,7 @@ class CategoryController extends AbstractController
             'idBiscuitSucre' => $idBiscuitSucre,
             'idBiscuitSale' =>$idBiscuitSale,
         ]);
-
+        
     }
 
     #[Route('/category/{id}', name: 'category_show')]
