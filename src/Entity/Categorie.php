@@ -26,6 +26,15 @@ class Categorie
         $this->produits = new ArrayCollection();
     }
 
+    // private $Categorie;
+
+    // public function __toString()
+    // {
+    //     return $this->Categorie;
+    // }
+
+
+
     public function getId(): ?int
     {
         return $this->id;

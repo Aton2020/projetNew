@@ -34,8 +34,8 @@ class Produit
     #[ORM\Column(type: 'integer', nullable: false)]
     private $stock;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-    private $date_creation = null;
+    // #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    // private $date_creation = null;
 
     #[ORM\OneToMany(mappedBy: 'produit', targetEntity: PanierProduit::class, orphanRemoval: true)]
     private Collection $panierProduits;
@@ -126,17 +126,17 @@ class Produit
         return $this;
     }
 
-    public function getDateCreation(): ?\DateTimeInterface
-    {
-        return $this->date_creation;
-    }
+    // public function getDateCreation(): ?\DateTimeInterface
+    // {
+    //     return $this->date_creation;
+    // }
 
-    public function setDateCreation(\DateTimeInterface $date_creation): self
-    {
-        $this->date_creation = $date_creation;
+    // public function setDateCreation(\DateTimeInterface $date_creation): self
+    // {
+    //     $this->date_creation = $date_creation;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     /**
      * @return Collection<int, PanierProduit>

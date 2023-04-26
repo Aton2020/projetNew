@@ -14,6 +14,7 @@ parameters:
 # Id de la balise body pour chaque page du site
 
     HOME_PAGE: "home"
+    LOGIN: "login"
     LEGAL_PAGE: "mentions"
     COOKIE_PAGE: "cookie"
     HORAIRES_PAGE: "horaires"

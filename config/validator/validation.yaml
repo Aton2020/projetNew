@@ -137,9 +137,7 @@ App\Entity\User:
                   type: string
                   message: The value {{ value }} is not a valid {{ type }}
          - Length: 
-                  min: 3
-                  max: 50
-                  minMessage: "field email must be at least {{ limit }} characters long"
+                  max: 255
                   maxMessage: "field email cannot be longer than {{ limit }} characters"
 
 

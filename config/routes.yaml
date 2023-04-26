@@ -62,7 +62,9 @@ app_conditions:
     methods: GET
 
 
-    
+app_verify_email:
+    path: /verify/email
+    controller: App\Controller\RegistrationController::verifyUserEmail    
 
 app_register: 
     path: /register
@@ -71,15 +73,20 @@ app_register:
 app_login: 
     path: /login
     controller: App\Controller\SecurityController::login
+    methods: GET|POST
 
 app_logout: 
     path: /logout
     controller: App\Controller\SecurityController::logout
     methods: GET
 
+# app_admin:
+#     path: /admin
+#     controller: App\Controller\AdminController::index
+
 app_admin:
     path: /admin
-    controller: App\Controller\AdminController::index
+    controller: App\Controller\Admin\DashboardController::index
 
 app_admin_member_management:
     path: /admin/members

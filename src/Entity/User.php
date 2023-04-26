@@ -27,7 +27,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      */
-    #[ORM\Column(type: 'string', length: 50, nullable: false, options:['collation' => 'utf8_general_ci'])]
+    #[ORM\Column(type: 'string', nullable: false, options:['collation' => 'utf8_general_ci'])]
     private $password;
 
     #[ORM\Column(type: 'string', length: 50, nullable: false, options:['collation' => 'utf8_general_ci'])]
