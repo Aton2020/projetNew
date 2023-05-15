@@ -69,6 +69,10 @@ app_verify_email:
 app_register: 
     path: /register
     controller: App\Controller\RegistrationController::register
+
+app_post_sign_up: 
+    path: /sign_up/mail/sent
+    controller: App\Controller\RegistrationController::registrationMailSent
   
 app_login: 
     path: /login
