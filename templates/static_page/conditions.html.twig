@@ -3,10 +3,10 @@
 {% block title %}Conditions générales de vente - CGV {% endblock %}
 
 {% block main %}
-<h3>1. Conditions générales d'utilisation</h3>
-<h3>2. Informations sur les cookies</h3><br>
+<h2 id="top-page">1. Conditions générales d'utilisation</h2>
+<a id="conditions" href="#cookies"><h2>2. Informations sur les cookies<img id="down" src="{{asset("img/down-arrow.png")}}"></h2></a><br>
 
-<h3>1. Conditions générales d'utilisation</h3>
+<h2>1. Conditions générales d'utilisation</h2>
 <h4>PRÉAMBULE</h4>
 
 <p>Vous êtes actuellement connecté au site www.bc-sissi.com (ci-après le « Site »).<br>
@@ -151,7 +151,11 @@ Le remboursement s'effectuera sur proposition de la société par crédit sur le
 
 Les avantages obtenus lors de l'achat de produit seront annulés en cas de remboursement dudit produit.</p><br><br>
 
-<h3>2. Informations sur les cookies</h3>
+<div class="up-arrow" > 
+    <a href="#top-page"><img id="up" src="{{asset("img/up.png")}}" alt="Icône haut"></a>
+</div>
+
+<h2 id="cookies">2. Informations sur les cookies</h2>
 
 <h4>Que sont les cookies ? Comment sont-ils utilisés ?</h4>
 <p>Un cookie est un fichier texte déposé sur l'appareil que vous utilisez pour accéder à Internet (ordinateur, téléphone mobile, tablette…) lorsque vous visitez un site via votre logiciel de navigation.</p>
@@ -175,15 +179,17 @@ Les avantages obtenus lors de l'achat de produit seront annulés en cas de rembo
 <p>Le bandeau restera affiché tant que vous n'avez pas poursuivi votre navigation, c'est-à-dire tant que vous ne vous êtes pas rendu sur une autre page du Site ou n'avez pas cliqué sur un autre élément du Site.
 Vous avez la possibilité de modifier à tout moment les paramètres de votre navigateur internet afin d'accepter, paramétrer ou, au contraire, refuser les cookies.</p>
 
-<p>Deux options s'offrent à vous : accepter tous les cookies, ou refuser systématiquement tous les cookies.    
+<p>Deux options s'offrent à vous : accepter tous les cookies, ou refuser la navigation sur le site.    
 Chaque navigateur internet propose des modalités de configuration différentes pour gérer les cookies. De manière générale, elles sont décrites dans le menu d'aide de chaque navigateur. Si vous utilisez un type ou une version de navigateur différent de ceux figurant sur la liste ci-dessous, nous vous invitons à consulter le menu « Aide » de votre navigateur : Firefox, Chrome, Internet Explorer, Safari et Opera.</p>
 
 <p>Toutefois, si vous décidez de refuser les cookies de sessions ou de fonctionnalités, vous ne pourrez accéder à de nombreuses options proposées par le Site. A ce titre, la Société ne saurait être tenu pour responsable en cas de fonctionnement dégradé du Site lié aux paramétrages que vous aurez choisis.
-Enfin, si vous avez désactivé un ou plusieurs cookies, nous pouvons toujours utiliser les informations collectées par ces cookies avant leur désactivation. Néanmoins, nous cessons de collecter des données par l'intermédiaire du cookie refusé.</p>
+Les cookies utilisés à des fins strictement fonctionnelles (souvent appelés "cookies techniques" ou "cookies nécessaires"), <b>ne collectent pas d'informations personnelles identifiables et n'ont pas pour objectif de suivre le comportement de l'utilisateur à des fins publicitaires ou de profilage</b>. Ils sont créés dès que l'utilisateur visite le site et sont supprimés lorsque la session est terminée.</p>
 
 <h4>Vos droits</h4>
 <p>Conformément à la réglementation, les cookies ont une durée de vie maximum de 13 mois.</p>
 <p>Conformément à la loi informatique et libertés du 6 janvier 1978 modifiée, et au RGPD, vous disposez d'un droit d'accès, de rectification, d'opposition, de suppression et de limitation pour les informations issues des cookies et autres traceurs. Pour cela, merci de vous adresser à info@b-c.sissi.fr.</p>
 
-
+<div class="up-arrow" > 
+    <a href="#top-page"><img id="up" src="{{asset("img/up.png")}}" alt="Icône haut"></a>
+</div>        
 {% endblock %}

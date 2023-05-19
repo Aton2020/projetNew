@@ -30,3 +30,21 @@ body {
     font-size: 5rem;
 }
 
+#conditions {
+    color: var(--bs-heading-color,inherit);
+    font-family: var(--bs-font-sans-serif);
+}
+
+#down {
+    width: 1.5rem;
+    }
+
+#up {
+    width: 2.5rem;
+}
+
+.up-arrow {
+    display: flex;
+    justify-content: center;
+
+}
