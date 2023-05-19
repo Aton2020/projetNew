@@ -50,6 +50,16 @@ class BiscuiterieAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
+if(in_array("ROLE_SUPER_ADMIN",$token->getUser()->getRoles(), true)){
+     return new  RedirectResponse($this->urlGenerator->generate('app_admin'));
+}
+if(in_array("ROLE_ADMIN",$token->getUser()->getRoles(), true)){
+    return new  RedirectResponse($this->urlGenerator->generate('app_admin'));
+}
+if(in_array("ROLE_USER",$token->getUser()->getRoles(), true)){
+    return new  RedirectResponse($this->urlGenerator->generate('app_user'));
+}
+
         $currentRoute = $request->get('_route');
   
         return new RedirectResponse($this->urlGenerator->generate($currentRoute));

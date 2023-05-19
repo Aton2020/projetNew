@@ -24,5 +24,7 @@ import './js/my-js.js';
 
 import './js/cart.js';
 
+import './styles/popup.css';
+
 // start the Stimulus application
 import './bootstrap';
