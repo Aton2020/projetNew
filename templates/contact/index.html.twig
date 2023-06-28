@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Biscuiterie Chocolaterie Sissi - Contact{% endblock %}
+
+{% block main %}
+    <div >
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success mt-4">
+            {{  message }}
+        </div>
+    {% endfor %}
+
+        <h1>Formulaire de contact</h1>
+
+        {# {{form(form)}} #}
+
+        {{ form_start(form, {
+            'attr' : {'class': 'form-perso'}
+        }) }}
+
+        {{ form_row(form.email, {
+            'attr': {'class': 'contact ' ~ 'w-75'},
+            'row_attr': {'class': 'flex-column'}
+        }) }}
+
+        {{ form_row(form.sujet, {
+            'attr': {'class': 'contact ' ~ 'w-75'},
+            'row_attr': {'class': 'flex-column'}
+        }) }}
+
+        {{ form_row(form.message, {
+            'attr': {'class': 'contact ' ~ 'w-75'},
+            'row_attr': {'class': 'flex-column'}
+        }) }}
+
+        {{ form_end(form) }}
+   
+    </div>
+{% endblock %}
