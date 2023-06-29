@@ -3,7 +3,7 @@
 {% block title %}Biscuiterie Chocolaterie Sissi - Contact{% endblock %}
 
 {% block main %}
-    <div >
+    <div class='m-5'>
     {% for message in app.flashes('success') %}
         <div class="alert alert-success mt-4">
             {{  message }}
@@ -19,7 +19,7 @@
         }) }}
 
         {{ form_row(form.email, {
-            'attr': {'class': 'contact ' ~ 'w-75'},
+            'attr': {'class': 'contact ' ~ 'w-75' },
             'row_attr': {'class': 'flex-column'}
         }) }}
 
