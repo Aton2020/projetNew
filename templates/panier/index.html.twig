@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+panier{% endblock %}
+
+{% block main %}
+<div class="container-md">
+{% set total = 0 %}
+   <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Photo du produit</th>
+      <th scope="col">Nom du produit</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Quantité</th>
+      <th scope="col">
+      Total</th>
+       <th scope="col">
+      Action</th>
+    </tr>
+  </thead>
+    <tbody>
+{% for produit in produitsPanier %}
+ 
+
+    <tr>
+    
+      <td class="align-middle" scope="row"><img height="80px" src="{{ asset('img_produits/' ~ produit.produit.photo) }}" alt=""></td>
+      <td class="align-middle">{{produit.produit.nom}}</td>
+      <td class="align-middle">{{produit.produit.prix /100}} €</td>
+      <td class="align-middle">{{produit.quantite}}</td>
+      <td class="align-middle">{{(produit.quantite*produit.produit.prix) /100}} €</td>
+      <td class="align-middle"><a class="btn btn-success  m-1" href="{{ path('app_panier_ajout', {'id': produit.produit.id}) }}">Ajouter</a><a class="btn btn-danger  m-1" href="{{ path('app_panier_suppression', {'id': produit.produit.id}) }}">Supprimer</a></td>
+    </tr>
+  
+  {% set total = total + (produit.quantite*produit.produit.prix) /100 %}
+
+{% endfor %}
+</tbody>
+<tfoot>
+ <tr> 
+ <td class="text-end display-5" colspan="5">
+ Total de la commande : {{total}} €
+ </td>
+  <td  colspan="1">
+ <a class="btn btn-warning" href="#">Commander et payer</a>
+ </td>
+ </tr>
+</tfoot>
+</table>
+</div>
+
+{% endblock %}
