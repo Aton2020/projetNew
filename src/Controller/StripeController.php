@@ -56,7 +56,7 @@ class StripeController extends AbstractController
         
         // on simule le montant obtenu depuis la page de commande:
 
-        $this->session->set('orderTotal', 52.6);
+        // $this->session->set('orderTotal', 52.6);
 
     }
 
@@ -116,6 +116,7 @@ class StripeController extends AbstractController
     public function orderConfirmation(): Response
 
     {
+        $this->session->set('panier', []);
 
         return $this->render('stripe/order_confirmation.html.twig', [
 
