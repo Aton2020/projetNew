@@ -45,6 +45,24 @@ class PanierController extends AbstractController
         return $this->redirectToRoute('app_panier');
     }
 
+    #[Route('/panier/decrease/{id}', name: 'app_panier_decrease')]
+    public function decrease($id, SessionInterface $session): Response {
+
+        // recuperation du tableau de produit ajouter au panier depuis la sesion utilisateur
+        $panier = $session->get('panier', []);
+
+        // verification si la quantité du produit est superieur a 1 pour pouvoir decrementer
+        if($panier[$id] > 1) {
+               $panier[$id]--;
+        } else {
+           // si la quantité du produit est egale a 1 on supprime le produit du panier
+           unset($panier[$id]);
+        }
+
+         $session->set('panier', $panier);
+         return $this->redirectToRoute('app_panier');
+}
+
     #[Route('/panier/suppression/{id}', name: 'app_panier_suppression')]
     public function supprimerAuPanier($id, SessionInterface $session): Response
     {
@@ -57,4 +75,13 @@ class PanierController extends AbstractController
 
         return $this->redirectToRoute('app_panier');
     }
+
+    #[Route('/panier/supprimer', name: 'app_panier_supprimer')]
+    public function deleteAllCart(SessionInterface $session): Response {
+
+       $session->remove('panier');
+        return $this->redirectToRoute('app_panier');
+    }
+
 }
+

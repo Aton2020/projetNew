@@ -5,7 +5,10 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
@@ -17,12 +20,24 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom')
-            ->add('prenom')
-            ->add('email')
-            ->add('code_postal')
-            ->add('ville')
-            ->add('adresse')
+            ->add('nom', TextType::class, [
+                'label'=>'Nom (*)',
+            ])
+            ->add('prenom', TextType::class, [
+                'label'=>'Prénom (*)',
+            ])
+            ->add('email', EmailType::class, [
+                'label'=>'Email (*)',
+            ])
+            ->add('code_postal', TextType::class, [
+                'label'=>'Code postal (*)',
+            ])
+            ->add('ville', TextType::class, [
+                'label'=>'Ville (*)',
+            ])
+            ->add('adresse', TextType::class, [
+                'label'=>'Adresse (*)',
+            ])
             ->add('complement_adresse')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
@@ -32,9 +47,13 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('plainPassword', PasswordType::class, [
+            ->add('plainPassword', RepeatedType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
+                'type' => PasswordType::class,
+                'first_options'  => ['label' => 'Mot de Passe (*)'],
+                'second_options' => ['label' => 'Confirmez votre mot de passe (*)'],
+                'invalid_message' => 'Les mots de passe doivent être concordants',
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [

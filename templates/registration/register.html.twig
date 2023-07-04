@@ -7,8 +7,10 @@
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
 
-    <h1>Enregistrez-vous :</h1>
 
+    <h1 class="text-center">Enregistrez-vous :</h1>
+    <p class="text-center">(*)Champs obligatoires</p>
+    <div class="container text-dark w-75>
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.nom) }}
         {{ form_row(registrationForm.prenom) }}
@@ -22,6 +24,7 @@
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn btn-lg btn-primary" type="submit">Valider</button>
+        <button type="submit" class="btn btn-lg btn-primary mb-2" type="submit">Valider</button>
     {{ form_end(registrationForm) }}
+    </div>
 {% endblock %}

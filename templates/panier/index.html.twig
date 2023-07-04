@@ -6,7 +6,7 @@ panier{% endblock %}
 {% block main %}
 <div class="container-md">
 {% set total = 0 %}
-   <table class="table table-striped">
+   <table class="table table-striped text-center">
   <thead>
     <tr>
       <th scope="col">Photo du produit</th>
@@ -28,24 +28,31 @@ panier{% endblock %}
       <td class="align-middle" scope="row"><img height="80px" src="{{ asset('img_produits/' ~ produit.produit.photo) }}" alt=""></td>
       <td class="align-middle">{{produit.produit.nom}}</td>
       <td class="align-middle">{{produit.produit.prix /100}} €</td>
-      <td class="align-middle">{{produit.quantite}}</td>
+      {# <td class="align-middle"><a class="btn btn-success  m-1" href="{{ path('app_panier_decrease', {'id': produit.produit.id}) }}">-</a></td> #}
+      <td class="align-middle"><a class="btn" href="{{ path('app_panier_decrease', {'id': produit.produit.id}) }}">-</a>  {{produit.quantite}}  <a class="btn" href="{{ path('app_panier_ajout', {'id': produit.produit.id}) }}">+</td>
       <td class="align-middle">{{(produit.quantite*produit.produit.prix) /100}} €</td>
-      <td class="align-middle"><a class="btn btn-success  m-1" href="{{ path('app_panier_ajout', {'id': produit.produit.id}) }}">Ajouter</a><a class="btn btn-danger  m-1" href="{{ path('app_panier_suppression', {'id': produit.produit.id}) }}">Supprimer</a></td>
+      <td class="align-middle"><a class="btn btn-danger  m-1" href="{{ path('app_panier_suppression', {'id': produit.produit.id}) }}">Supprimer</a></td>
     </tr>
   
-  {% set total = total + (produit.quantite*produit.produit.prix) /100 %}
+  {% set total = 7 + total + (produit.quantite*produit.produit.prix) /100 %}
 
 {% endfor %}
 </tbody>
 <tfoot>
  <tr> 
+ {# <td><a class="btn btn-dark" href="{{ path('app_panier_supprimer') }}">Supprimer mon panier</a></td> #}
+ {% if produitsPanier|length > 0 %}
+ <td class="text-end display-6" colspan="5">
+ + Frais de livraison : 7 €
+ </td>
+ {% endif %}
+ </tr>
  <td class="text-end display-5" colspan="5">
  Total de la commande : {{total}} €
+ </td> 
+ <td  colspan="1">
+ <a class="btn btn-warning" href="{{ path('app_order') }}">Commander et payer</a> <a class="btn btn-dark" href="{{ path('app_panier_supprimer') }}">Supprimer mon panier</a>
  </td>
-  <td  colspan="1">
- <a class="btn btn-warning" href="{{ path('app_order') }}">Commander et payer</a>
- </td>
- </tr>
 </tfoot>
 </table>
 </div>
