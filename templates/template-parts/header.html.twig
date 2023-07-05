@@ -9,6 +9,7 @@
 		
      
         <a id="perso" href="{{ path('app_login') }}">
+		
 		{% if app.user %}
 			<p><a id="logout" href="{{ path("app_logout") }}"><img id="logout" class="icon" src="{{ asset("assets/logout.png") }}" alt="Logout"></a> </p>
 		{% else %}

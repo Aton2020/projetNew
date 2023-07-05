@@ -2,8 +2,18 @@
 
 #biscuits_sales, #biscuits_sucres {
 
-    width: 45%; 
+    width: 94%; 
     height: 500px; 
     margin: 2.5rem;
    
+}
+
+@media screen and (max-width: 978px) {
+    #biscuits_sales, #biscuits_sucres {
+
+        width: 100%; 
+        height: 500px; 
+        margin: 0;
+       
+    }
 }

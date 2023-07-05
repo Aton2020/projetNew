@@ -92,6 +92,74 @@ header {
       
     }
 
+    .photo_main2 {
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo_main2 a {
+      width: 800px;
+    }
+
+    .bouton_type {
+      width: 400px; 
+      min-height: 80px;
+      background-color: white;
+      border-radius: 50px;
+      
+      }
+
+    #bouton1 {
+      line-height: 1.1;
+    }
+
+    @media screen and (max-width: 1073px) {
+      header {
+        display: block;
+      }
+
+    }
+
+    @media screen and (max-width: 978px) {
+      
+      .button_main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .photo_main2 {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+        gap: 30px;
+
+      }
+
+      .photo_main2 a {
+        width: 100%;
+      }
+
+      .photo_main2 a img {
+        object-fit: cover;
+      }
+      
+    }
+
+    @media screen and (max-width: 576px) {
+      .photo_main2 a img {
+        object-fit: fill;
+        gap: 0;
+      }
+
+      .bouton_type {
+        width: 75%;
+      }
+    }
+
+  
+
 
     
       
