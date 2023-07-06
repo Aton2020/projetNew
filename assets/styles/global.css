@@ -49,6 +49,17 @@ body {
 
 }
 
+.show, #show{
+    font-family: 'Great Vibes', cursive;
+    color:black;
+    font-size: 3rem
+}
+
+#main_show {
+
+    font-size: 4rem
+}
+
 /* .contact {
 
 } */

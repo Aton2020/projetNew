@@ -12,8 +12,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PanierController extends AbstractController
 {
-    #[Route('/panier', name: 'app_panier')]
-    public function index(SessionInterface $session , EntityManagerInterface $em): Response
+    #[Route('/panier', name: 'app_panier')]    
+    /**
+     * crée un tableau associatif avec un produit et une quantité (un tableau qui contient plusieurs tableaux associatifs)
+     *
+     * @param  mixed $session
+     * @param  mixed $em
+     * @return Response
+     */
+    public function index(SessionInterface $session , EntityManagerInterface $em): Response 
     {
         $panier = $session->get('panier', []);
         $panierContenu = [];

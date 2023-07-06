@@ -3,14 +3,18 @@
 {% block main %}
 
 
+<h2 class="text-center" id="show">Bon choix ! Dans la catégorie « {{category.name}} », nous vous proposons les produits suivants :</h2>
+
+
 <div class="container">
     <div class="row">
         {% for produit in category.produits %}
-            <div class="col-4 p-3">
+            <div class="col-12 col-sm-4 p-3">
                 <div class="card">
                     <img src="{{ asset('img_produits/' ~ produit.photo) }}" class="card-img-top" alt="{{ produit.nom }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ produit.nom }}</h5>
+                        <p class="card-text">{{ produit.poids }}</p>
                         <p class="card-text">{{ produit.description }}</p>
                         <p class="card-text"><b>{{ produit.prix /100 }} €</b></p>
                         <a href="{{ path('app_panier_ajout', {'id': produit.id}) }}" class="btn btn-dark">Ajouter au panier et chosir la quantité</a>
@@ -21,5 +25,7 @@
     </div>
 </div>
 
+
+<h2 class="text-center" ><a class="show" href="{{path("app_home") }}">Cliquez ici pour revenir au menu principal.</a></h2>
 
 {% endblock %}

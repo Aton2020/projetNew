@@ -14,10 +14,17 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class OrderController extends AbstractController
 {
-    #[Route('/order', name: 'app_order')]
+    #[Route('/order', name: 'app_order')]    
+    /**
+     * sert à enregistrer les détails de la commande dans la BDD
+     *
+     * @param  mixed $em
+     * @param  mixed $session
+     * @return Response
+     */
     public function index(EntityManagerInterface $em,SessionInterface $session): Response
-
-
+    
+    
     {
 
         if(!$this->getUser()){
@@ -59,9 +66,9 @@ class OrderController extends AbstractController
         }
 
 // dd($order->getRef());
-$em->flush() ;
+$em->flush() ;          //pour envoyer à la BDD
         }
-      return $this->redirectToRoute('app_stripe',['ref'=>$order->getRef(), $session->set('orderTotal', $totalAPayer/100)]);
+      return $this->redirectToRoute('app_stripe',[ $session->set('orderTotal', $totalAPayer/100)]); //
     }
 
 
